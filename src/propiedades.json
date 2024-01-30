@@ -1,0 +1,8 @@
+{
+    "id": 1,
+   "tipoNegocio": "Compra",
+   "propiedad": "Departamento",
+   "zona": "Sur",
+   "dormitorios": 10,
+   "precio": 10000
+}

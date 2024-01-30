@@ -1,0 +1,56 @@
+.propContainer {
+    height: 400px;
+    width: 350px;
+    border: 1px solid black;
+    margin: 50px 0px;
+}
+
+
+.propContainer .caruselPropContainer{
+    height: 50%;
+    background-color: gray;
+    overflow: hidden;
+}
+
+.propContainer .infoContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+}
+
+.propContainer .infoContainer h1 {
+    margin: 10px;
+}
+
+.propContainer .infoContainer .infoPropContainer {
+    width: 100%;
+    display: flex;
+    padding: 10px 20px;
+}
+
+.propContainer .infoContainer .infoPropContainer p{
+    margin-right: 40px;
+}
+
+.propContainer .infoContainer .buttonContainer {
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding: 0px 10px;
+}
+
+.propContainer .infoContainer .buttonContainer button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    text-decoration: underline;
+    color: black;
+    cursor: pointer;
+}
+
+.propContainer .infoContainer .buttonContainer button:hover{
+    color: blue;
+}

@@ -1,0 +1,185 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Estiloes del buscador*/
+
+main .imgContainer{
+    background-image: url("../assets/Fondo-mobile.jpg");
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .filter-container {
+    width: 800px;
+    height: auto;
+    border-radius: 30px;
+
+}
+main .filter-container .typeFilter-container{
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    width: 600px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+main .filter-container .typeFilter-container input {
+    display: none;
+}
+
+main .filter-container .typeFilter-container label {
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 30px;
+    color: rgb(99, 99, 99);
+}
+
+main .filter-container .typeFilter-container label:hover {
+    color: black;
+}
+
+main .filter-container .typeFilter-container input:checked + label{
+    background-color: rgb(214, 212, 212);
+    color: black;
+    text-decoration: underline rgb(216, 19, 19);
+    text-underline-offset: 5px;
+    transition: all 1s ease-out;
+}
+
+main .filter-container .inputText-container {
+    padding: 10px 5px;
+    padding-bottom: 20px;
+    background-color: white;
+    width: 800px;
+    border-radius: 0px 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .filter-container #tipoPropiedad {
+    font-size: 18px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+main .filter-container #inputSearch {
+    font-size: 15px;
+    flex: 1;
+    margin: 0px 10px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
+main .filter-container #inputSearch + button {
+    padding: 20px;
+    background-color: rgb(248, 7, 7);
+    border: none;
+    color: white;
+    border-radius: 20px;
+    width: 150px;
+}
+
+main .filter-container #inputSearch + button:hover{
+    color: black;
+}
+
+/*EStilos del contenedor de la ubicacion, horario y telefono*/
+
+main .infoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*contenedor de propiedades*/
+
+main .propiedadesContainer {
+    margin: 60px 40px;
+}
+main .propiedadesContainer h2{
+    font-size: 30px;
+    margin-top: 70px;
+}
+main .propiedadesContainer div > .masInfoButton{
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+main .propiedadesContainer .masInfoButton{
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    text-decoration: underline;
+    color: rgb(0, 58, 248);
+}
+
+
+/*Clases de utilidad*/
+
+@media (max-width: 830px){
+    main .filter-container{
+        width: 80%;
+        overflow: hidden;
+    }
+
+    main .filter-container .typeFilter-container, main .filter-container .inputText-container{
+        width: 100%;
+    }
+
+    main .filter-container  .inputText-container {
+        padding: 10px;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 200px;
+        align-items: center;
+        padding-left: 0px 10px;
+    }
+
+    main .filter-container  .inputText-container #tipoPropiedad {
+        width: 95%;
+        margin: 0;
+    }
+
+    main .filter-container #inputSearch {
+        font-size: 18px;
+        height: 50px;
+        flex: 0;
+        padding: 10px 10px;
+        width: 95%;
+    }
+
+    main .filter-container #inputSearch + button {
+        width: 95%;
+    }
+} 
+
+@media (max-width: 500px) {
+    main .filter-container .typeFilter-container label {
+        padding: 10px;
+        font-size: 20px;
+        transition: none;
+    }
+}
+@media (min-width: 600px) {
+    main .imgContainer{
+        background-image: url("../assets/Fondo.jpg");
+    }
+
+    
+}

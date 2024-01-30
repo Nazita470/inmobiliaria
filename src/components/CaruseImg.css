@@ -1,0 +1,31 @@
+.carusel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.carusel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.carusel button{
+    margin: 0px 10px;
+    position: absolute;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    color: black;
+    display: none;
+}
+
+.carusel:hover >  button{
+    display: inline-block;
+}
+
+.carusel .botonAdelante{
+    right: 0px;
+}

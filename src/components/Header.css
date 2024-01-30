@@ -1,0 +1,104 @@
+header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    box-shadow: 2px 2px 10px;
+}
+
+header .logo-links-container {
+    display: flex;
+    width: 1000px;  
+    padding: 20px;
+}
+
+header img {
+    object-fit: cover;   
+}
+
+header .links-container{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header .links-container .link-header {
+    font-size: 20px;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}  
+
+header .links-container .link-header:hover {
+    color: red;
+}
+
+header .bar-icon-conatiner{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+header .bar-icon-conatiner button {
+    border: none;
+    background-color: transparent;
+}
+
+header .bar-icon-conatiner button span {
+    font-size: 30px;
+}
+
+header .links-responsive{
+    display: block;
+    position: absolute;
+    width: 100%;
+    border: 1px solid black;
+    right: 0;
+    top: 100px;
+    height: 350px;
+    background-color: rgb(95, 94, 94);
+   
+}
+
+header .links-responsive .links {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+header .links-responsive .links li {
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+header .links-responsive .links li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+header .links-responsive .links li a:hover{
+    
+    text-decoration: underline;
+}
+
+@media (max-width: 950px) {
+    header .links-container {
+        display: none;
+    }
+    header .bar-icon-conatiner {
+        display: flex;
+        flex-direction: column;
+        transition: all 0.5s ease-out;
+    }
+    header .logo-links-container  {
+        justify-content: space-between;
+    }
+}
