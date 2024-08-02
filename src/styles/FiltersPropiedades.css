@@ -1,0 +1,219 @@
+.filtersPropiedades-container {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.filtersPropiedades-container #responsiveMenu {
+  display: none;
+  background-color: white;
+  border: 1px solid black;
+  padding: 5px 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.filtersPropiedades-container #responsiveMenu p {
+    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.filtersPropiedades-container #botonBuscar {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: red;
+  color: white;
+}
+
+.filtersPropiedades-container  .ventanaFiltrosContainer {
+  width: 300px;
+  height: auto;
+  border: 1px solid black;
+  position: absolute;
+  top: 53px;
+  right: 30px;
+  z-index: 999;
+  background-color: white;
+}
+
+.filtersPropiedades-container  .ventanaFiltrosContainer #ventaResponsiveHabitaciones{
+  border: none;
+  width: 100%;
+  padding: 10px;
+
+}
+
+.filtersPropiedades-container  .ventanaFiltrosContainer #ventanaResponsivePrecio{
+  border: none;
+  width: 100%;
+  padding: 10px;
+
+}
+
+.filtersPropiedades-container  .ventanaFiltrosContainer .zonaResponsiveContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  display: none;
+}
+
+.filtersPropiedades-container  .ventanaFiltrosContainer .tipoNegocioReponsiveContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  display: none;
+}
+.filtersPropiedades-container .selectFiltersPropiedades {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.filtersPropiedades-container .container-button-PrecioHabitaciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.filtersPropiedades-container .container-button-PrecioHabitaciones > button {
+  padding: 10px;
+  margin: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.filtersPropiedades-container .container-button-PrecioHabitaciones .precioHabitacionesDivContainer {
+  display: block;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.filtersPropiedades-container .precioHabitacionesDivContainer{
+  display: block;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.filtersPropiedades-container .precioHabitacionesDivContainer
+  > label {
+  font-size: 16px;
+  margin: 5px;
+}
+
+.filtersPropiedades-container .precioHabitacionesDivContainer
+  > select {
+  padding: 10px;
+  margin-top: 5px 0px;
+}
+
+.filtersPropiedades-container .precioHabitacionesDivContainer
+  > select
+  + button {
+  padding: 5px;
+  background-color: red;
+  width: 100%;
+  color: white;
+  margin-top: 5px;
+}
+
+.filtersPropiedades-container .precioHabitacionesDivContainer
+  > input {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 10px;
+}
+
+.filtersPropiedades-container .precioHabitacionesDivContainer
+  > input
+  + button {
+  padding: 5px;
+  background-color: red;
+  width: 100%;
+  color: white;
+}
+
+.d-none {
+  display: none !important;
+}
+
+/*texto de resultado*/
+
+.div-noResults {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+@media (max-width: 920px) {
+    .filtersPropiedades-container .selectFiltersPropiedades {
+        margin: 10px;
+    }
+  .filtersPropiedades-container #responsiveMenu {
+    display: flex;
+    margin: 0px 20px;
+  }
+
+  .filtersPropiedades-container #responsiveMenu span {
+  }
+
+  .filtersPropiedades-container #habitaciones, .filtersPropiedades-container #precio{
+    display: none;
+  }
+}
+
+@media (max-width: 810px) {
+
+    .filtersPropiedades-container #zona{
+        display: none;
+      }
+     
+    .filtersPropiedades-container  .ventanaFiltrosContainer .zonaResponsiveContainer{
+      display: flex;
+    }     
+}
+
+
+@media (max-width: 600px) {
+
+    .filtersPropiedades-container #tipoCompra{
+        display: none;
+      }
+    .filtersPropiedades-container  .ventanaFiltrosContainer .tipoNegocioReponsiveContainer{
+      display: flex;
+    }
+
+  .filtersPropiedades-container {
+    justify-content: center;
+  }
+}

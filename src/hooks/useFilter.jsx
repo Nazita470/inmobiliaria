@@ -8,20 +8,44 @@ export function useFilters(){
     function filtrar(arr){
         return arr.filter((item) => {
             return (
-                (filtrado.tipoNegocio == "All" || filtrado.tipoNegocio == item.tipoNegocio)
+                (filtrado.tipoNegocio == "Compra/Alquiler"  || filtrado.tipoNegocio == item.tipoNegocio)
                 &&
-                (filtrado.propiedad == "All" || filtrado.propiedad == item.propiedad)
+                (filtrado.propiedad.toLowerCase() == "all" || filtrado.propiedad == item.propiedad)
                 &&
-                (filtrado.zona == "All" || filtrado.zona == item.zona)
+                (filtrado.zona.toLowerCase() == "all" || filtrado.zona.toLowerCase() == item.zona.toLowerCase())
                 &&
-                (filtrado.dormitorios == 0 || filtrado.dormitorios == item.dormitorios)
+                (filtrado.dormitoriosMax == 0 || filtrado.dormitoriosMax >= item.dormitorios)
                 &&
-                (filtrado.maxPrecio || filtrado.maxPrecio >= item.precio)
+                (filtrado.dormitoriosMin <= item.dormitorios)
+                &&
+                (filtrado.maxPrecio == 0  || filtrado.maxPrecio >= item.precio)
                 &&
                 item.precio >= filtrado.minPrecio
 
             )
         })
     }
-    return {setFilters, filtrado, filtrar}
+
+    function reiniciarFiltrado(){
+        setFilters({
+            tipoNegocio: "Compra/Alquiler" ,
+            propiedad: "All",
+            zona: "all",
+            minPrecio: "0",
+            maxPrecio: 0,
+            dormitoriosMax: 0,
+            dormitoriosMin: 0
+        })
+    }
+
+    const filtroVacio = {
+        tipoNegocio: "Compra/Alquiler" ,
+        propiedad: "All",
+        zona: "all",
+        minPrecio: 0,
+        maxPrecio: 0,
+        dormitoriosMax: 0,
+        dormitoriosMin: 0
+    }
+    return {setFilters, filtrado, filtrar, reiniciarFiltrado, filtroVacio}
 }

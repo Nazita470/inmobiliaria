@@ -1,0 +1,19 @@
+.inputPropiedad {
+    width: 100%;
+}
+
+.listaSuggestions {
+    width: 100%;
+    border: 1px solid black;
+    border-top: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+.suggestion {
+    margin: 0px 5px;
+
+}
+.suggestion:hover {
+    background-color: rgb(245, 244, 244);
+    cursor: pointer;
+}

@@ -9,9 +9,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+   
 }
-
-
 .carusel button{
     margin: 0px 10px;
     position: absolute;
@@ -20,6 +19,7 @@
     border: none;
     color: black;
     display: none;
+    cursor: pointer;
 }
 
 .carusel:hover >  button{

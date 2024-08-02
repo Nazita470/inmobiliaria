@@ -1,0 +1,78 @@
+.contactar{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+}
+
+.contactar .contactarContainer{
+    position: absolute;
+    margin-top: 30%;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.propiedadesPageMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex: 1;
+}
+
+
+
+.propiedadesPageMain .containerPagePropiedades{
+    width: 1480px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.propiedadesPageMain .containerPagePropiedades header {
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.propiedadesPageMain .containerPagePropiedades .filtroMsj{
+    width: 100%;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: black;
+    font-weight: bolder;
+    flex-wrap: wrap;
+}
+
+.propiedadesPageMain .containerPagePropiedades  .seccionPropiedades{
+    width: 100%;
+    flex: 1;
+
+}
+
+@media (max-width: 1480px){
+    .propiedadesPageMain .containerPagePropiedades{
+        max-width: 1240px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .propiedadesPageMain .containerPagePropiedades{
+        max-width: 900px;
+        width: 100%;
+    }
+}
+
+   

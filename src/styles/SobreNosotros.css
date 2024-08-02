@@ -1,0 +1,55 @@
+.mainContainer {
+   flex: 1;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.mainContainer h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.mainContainer .textContainer{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.mainContainer .textContainer div {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.mainContainer .textContainer .divImg {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainContainer .textContainer .divImg .imgContainer {
+    display: flex;
+}
+
+.mainContainer .textContainer .divImg img{
+    justify-content: center;
+    align-self: center;
+}
+
+@media (max-width: 750px) {
+    .mainContainer .textContainer div{
+        font-size: 18px;
+    }
+
+    .mainContainer .textContainer .divImg {
+        flex-direction: column;
+        
+    }
+
+    .mainContainer .textContainer .divImg .imgContainer {
+        justify-content: space-around;
+    }
+}

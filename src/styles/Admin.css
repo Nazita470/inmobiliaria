@@ -1,0 +1,45 @@
+.mainAdmin{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainAdmin h1{
+    margin-bottom: 30px;
+}
+
+.mainAdmin form{
+    border: 1px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainAdmin form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-bottom: 15px;
+}
+
+.mainAdmin form div input{
+    padding: 5px;
+}
+.mainAdmin form div label{
+    margin-bottom: 5px;
+}
+
+.mainAdmin form button{
+    width: 80%;
+    padding: 5px;
+    color: white;
+    background-color: red;
+    margin-bottom: 5px;
+}

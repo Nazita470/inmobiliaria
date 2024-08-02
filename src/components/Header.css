@@ -51,40 +51,37 @@ header .bar-icon-conatiner button span {
     font-size: 30px;
 }
 
-header .links-responsive{
+ .links-responsive{
     display: block;
-    position: absolute;
+    position: relative;
     width: 100%;
-    border: 1px solid black;
-    right: 0;
-    top: 100px;
     height: 350px;
-    background-color: rgb(95, 94, 94);
+    background-color: white;
+    z-index: 10;
    
 }
 
-header .links-responsive .links {
+.links-responsive .links {
     height: 300px;
     display: flex;
     flex-direction: column;
 
 }
 
-header .links-responsive .links li {
-    text-align: center;
+.links-responsive .links li {
+    text-align: start;
     padding: 30px;
     text-decoration: none;
     font-size: 20px;
-    color: white;
+    color: black;
 }
 
-header .links-responsive .links li a {
+.links-responsive .links li a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
-
-header .links-responsive .links li a:hover{
+.links-responsive .links li a:hover{
     
     text-decoration: underline;
 }

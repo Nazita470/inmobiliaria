@@ -2,14 +2,8 @@ import { createContext, useState } from "react";
 
 export const FiltersContext = createContext()
 
-export function FilterProvider({children}){
+export function FilterProvider({children, name}){
     const [filters, setFilters] = useState({
-        tipoNegocio: "all",
-        propiedad: "all",
-        zona: "all",
-        minPrecio: "0",
-        maxPrecio: null,
-        dormitorios: 0
     }
     )
 
@@ -18,7 +12,9 @@ export function FilterProvider({children}){
             filters,
             setFilters
         }}>
-            {children}
+             <div className={name} id="allContainer">
+                {children}
+             </div>
         </FiltersContext.Provider>
     )
 }

@@ -1,4 +1,4 @@
-main .inmobiliarioInfoConatiner {
+.mainInicio  .inmobiliarioInfoConatiner {
    width: 100%;
    display: flex;
    justify-content: space-around;
@@ -6,7 +6,7 @@ main .inmobiliarioInfoConatiner {
    padding: 0px 20px;
 }
 
-main .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info{
+.mainInicio  .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info{
     width: 350px;
     height: 100px;
     display: flex;
@@ -18,36 +18,36 @@ main .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info{
     padding: 0px 10px;
 }
 
-main .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info:hover{
+.mainInicio  .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info:hover{
     border: 1px solid black;
 }
 
-main .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info .img-container{
+.mainInicio  .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info .img-container{
     background-color: rgb(219, 211, 211);
     padding: 10px;
     border-radius: 20px;
     margin-right: 10px;
 }
 
-main .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info .infoContainer{
+.mainInicio  .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info .infoContainer{
     display: flex;
     flex-direction: column;
     
 }
 
-main .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info .infoContainer p {
+.mainInicio  .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info .infoContainer p {
     margin: 5px 0px;
 }
 
 @media (max-width: 850px) {
 
-    main .inmobiliarioInfoConatiner{
+    .mainInicio .inmobiliarioInfoConatiner{
         flex-direction: column;
         justify-content: center;
         padding: 0;
     }
 
-    main .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info{
+    .mainInicio .inmobiliarioInfoConatiner .inmobiliarioInfoConatiner-info{
         margin-right: 0;
     }
 }

@@ -1,0 +1,42 @@
+.AllConsultaContainer{
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.AllConsultaContainer h1{
+    text-align: start;
+    font-size: 20px;
+    margin: 10px 0px;
+}
+.AllConsultaContainer .inputConsulta {
+    padding: 10px 5px;
+    border-radius: 7px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    width: 46%;
+}
+
+.AllConsultaContainer .inputSeparadosContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.AllConsultaContainer #mailInput{
+    width: 100%;
+}
+
+.AllConsultaContainer button {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: red;
+    border-radius: 7px;
+}
+
+.divEnviado {
+    margin: 10px;
+    text-align: center;
+}

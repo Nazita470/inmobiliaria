@@ -1,0 +1,195 @@
+.mainPropInfoPage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    flex: 1;
+}
+
+
+.mainPropInfoPage .mainPropInfoPage-conatainer{
+    width: 1450px;
+}
+
+
+.ventanaCaruselImagenes {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.75);
+}
+
+.ventanaCaruselImagenes img{
+    object-fit: cover;
+    width: 100%;
+    min-width: 300px;
+    height: 100%;
+}
+
+.ventanaCaruselImagenes > div {
+    width: 50%;
+    height: auto;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .imgContainer {
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    height: 60vh;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .imgContainer > p{
+    margin: 10px 10px;
+}
+.mainPropInfoPage .mainPropInfoPage-conatainer .imgContainer .link{
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .imgContainer .link:hover{
+    color: red;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .imgContainer #link-menor::after{
+    content: ">";
+    font-size: 16px;
+    width: 5px;
+    margin: 0px 5px;
+    font-weight: bold;
+}
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .titleInfoContainer{
+    background-color: rgb(245, 239, 239);
+    border-radius: 20px;
+    margin: 50px 0px;
+    padding: 15px 20px;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .titleInfoContainer .titleSubtitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .titleInfoContainer h1{
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .titleInfoContainer h2{
+    color: rgb(78, 77, 77);
+}
+
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .infoConsulta-section{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .titleInfoContainer .iconsInfoContainer{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .titleInfoContainer .iconsInfoContainer p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .titleInfoContainer .iconsInfoContainer p img{
+    margin-right: 5px;
+}
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .descriptionSection{
+    flex: 1;
+    margin-right: 40px;
+}
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .descriptionSection h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .descriptionSection .leerMasButton{
+    background-color: transparent;
+    border: none;
+    color: blue;
+    text-decoration: underline; 
+    cursor: pointer;
+}    
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .descriptionSection p{
+    font-size: 18px;
+
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .descriptionSection .mapaSection{
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .consultaPropiedadContainer{
+    width: 40%;
+    max-width: 380px;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .consultaPropiedadContainer .preguntasButton {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 5px 3px;
+}
+
+.mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .consultaPropiedadContainer .selected {
+    border: 2px solid red;
+    color: white;
+    background-color: rgb(247, 61, 61);
+}
+
+.mb-10{
+    margin-bottom: 20px !important;
+}
+
+.over-hidden {
+    overflow: hidden !important;
+    min-height: 0px !important;
+    height: 100vh !important;
+}
+
+@media (max-width: 1480px){
+    .mainPropInfoPage .mainPropInfoPage-conatainer{
+        width: 1240px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .mainPropInfoPage .mainPropInfoPage-conatainer{
+        width: 900px;
+    }
+}
+
+@media (max-width: 750px) {
+    .mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .infoConsulta-section{
+        flex-direction: column;
+    }
+
+    .mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .descriptionSection{
+        margin-right: 0px;
+    }
+
+    .mainPropInfoPage .mainPropInfoPage-conatainer .otherThingsContainer .consultaPropiedadContainer{
+        margin-top: 50px;
+        width: 100%;
+        max-width: 1000px;
+    }
+}

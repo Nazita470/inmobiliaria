@@ -3,3 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#allContainer{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+}

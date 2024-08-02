@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom"
 import logo from "../assets/logo.png"
 import "./Header.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 export function Header(){
     const [mostrarLinks, setMostrarLinks] = useState(false)
+    const [render, setRender] = useState(false)
+
+    useEffect(() => {
+        setMostrarLinks(false)
+    }, [render])
+   
     return (
+        <>
         <header>
             <div className="logo-links-container">
                 <div>
@@ -25,32 +32,38 @@ export function Header(){
                     </button>
                 </div>
 
-                {
-                    mostrarLinks && <ResponsiveLinks/>
-                }
+                
 
                 <div className="links-container">  
                     <Link className="link-header" to="/">Inicio</Link>
                     <Link className="link-header"  to="/propiedades">Propiedades</Link>
-                    <Link className="link-header" to="/servicios">Servicios</Link>
-                    <Link className="link-header" to="/sobreNosotros">Sobre Nosotros</Link>                 
+                    <Link className="link-header" to="/sobreNosotros">Sobre Nosotros</Link>     
+                    <Link className="link-header" to="/contacto">Contacto</Link>
+
                 </div>
             </div>
+
+      
         </header>
+              {
+                mostrarLinks && <ResponsiveLinks setRender={setRender} render={render}/>
+                }
+        </>
     )
 }
 
-function ResponsiveLinks() {
+function ResponsiveLinks({setRender, render}) {
     return(
         <div className="links-responsive">
         
             <div className="links">
                     <nav>
                         <ul>
-                            <li><Link className="link-header" to="/">Inicio</Link></li>
-                            <li><Link className="link-header"  to="/propiedades">Propiedades</Link></li>
-                            <li><Link className="link-header" to="/servicios">Servicios</Link></li>
-                            <li><Link className="link-header" to="/sobreNosotros">Sobre Nosotros</Link></li>
+                            <li><Link onClick={() => setRender(!render)} className="link-header" to="/">Inicio</Link></li>
+                            <li><Link onClick={() => setRender(!render)} className="link-header"  to="/propiedades">Propiedades</Link></li>
+                            <li><Link onClick={() => setRender(!render)} className="link-header" to="/sobreNosotros">Sobre Nosotros</Link></li>
+                            <li><Link onClick={() => setRender(!render)} className="link-header" to="/contacto">Contacto</Link></li>
+
                         </ul>
                     </nav>
                    

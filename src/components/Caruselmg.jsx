@@ -12,12 +12,9 @@ export function Caruselmg({img}){
 
     function handleButtonClick(e) {
         let id = e.target.id
-        console.log(id)
-        console.log(index)
 
         if(id == 1) {
             if((index + 1) <= (img.length - 1)) {
-                console.log("pasa")
                 setIndex(index + 1)
                 disabledAtras && setDisabledAtras(false)
             }else {

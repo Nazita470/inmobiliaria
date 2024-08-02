@@ -1,14 +1,35 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { FiltersContext } from "../context/filters"
-import { Prop } from "../components/Prop"
 import maps from "../assets/marcador-de-posicion.png"
 import calendar from "../assets/time-and-calendar.png"
 import phone from "../assets/telefono.png"
 import "../styles/Inicio.css"
 import "../styles/info.css"
+import todas_propiedades from "../propiedades.js"
+import { CaruselPropiedades } from "../components/CaruselPropiedades.jsx"
+import { Link } from "react-router-dom"
+import { useFilters } from "../hooks/useFilter.jsx"
 export function Inicio() {
+    const { filtrado } = useFilters()
+    const [propAlquiler, setPropAlquiler] = useState([])
+    const [propCompra, setPropCompra] = useState([])
+
+    useEffect(() => {
+        async function fetching() {
+            const fetchAlquiler = await fetch("http://localhost:8080/api/propiedades/filtrar/alquiler")
+            const jsonAlquiler = await fetchAlquiler.json()
+            console.log(jsonAlquiler)
+            setPropAlquiler(jsonAlquiler)
+            const fetchCompra = await fetch("http://localhost:8080/api/propiedades/filtrar/compra")
+            const jsonCompra = await fetchCompra.json()
+            console.log(jsonCompra)
+            setPropCompra(jsonCompra)
+        }
+
+        fetching()
+    }, [])
     return (
-        <main>
+        <main className="mainInicio">
             <div className="imgContainer">
                 <Filters />
             </div>
@@ -18,11 +39,12 @@ export function Inicio() {
             </div>
 
             <div className="propiedadesContainer">
-                <h2>Propiedades en alquiler</h2>
-                <PropContainer />
+                
+                    <h2>Propiedades en alquiler</h2>
+                    <CaruselPropiedades tipo={"Alquiler"} propiedades={propAlquiler}></CaruselPropiedades>
 
-                <h2>Propiedades en venta</h2>
-                <PropContainer />
+                    <h2>Propiedades en venta</h2>
+                    <CaruselPropiedades tipo={"Venta"} propiedades={propCompra}></CaruselPropiedades>
                 
             </div>
         </main>
@@ -30,42 +52,52 @@ export function Inicio() {
 }
 
 function Filters() {
-    const [tipoCompra, setTipoCompra] = useState("Alquiler")
-    const [tipoPropiedad, setTipoPropiedad] = useState("Departamento")
-    const [zona, setZona] = useState("")
-    const {setFilters} = useContext(FiltersContext)
-    function buscar() {
-        setFilters((prevState) => (
-            {...prevState, 
-            tipoNegocio: tipoCompra,
-            propiedad: tipoPropiedad,
-            zona: zona
-            }
-        ))
+    const {setFilters, filtroVacio, filtrado} = useFilters()
+    const [tipoCompra, setTipoCompra] = useState(filtrado.tipoNegocio || "Alquiler")
+    const [tipoPropiedad, setTipoPropiedad] = useState(filtrado.propiedad || "Departamento")
+    const [zona, setZona] = useState(filtrado.zona)
+
+    useEffect(() => {
+    }, [filtrado])
+  
+    function buscarPropiedades() {
+        const newFilter = {...filtrado}
+        if(tipoCompra) newFilter.tipoNegocio = tipoCompra
+        if(tipoPropiedad) newFilter.propiedad = tipoPropiedad
+        if(zona) {
+            let lowZona = zona.toLowerCase()
+            if(lowZona == "norte" ||lowZona == "sur" || lowZona == "este" || lowZona == "oeste" || lowZona == "centro")
+             newFilter.zona = zona
+        }
+        console.log(newFilter)
+        setFilters(newFilter)
     }
 
     return (
         <div className="filter-container">
             <section className="typeFilter-container">
-                <input type="radio" onChange={(e) => setTipoCompra(e.target.id)} name="filter" id="Alquiler" checked={tipoCompra == "Alquiler"} />
+                <input checked={tipoCompra == "Alquiler"} type="radio" onChange={(e) => setTipoCompra(e.target.id)} name="filter" id="Alquiler" />
                 <label className="label-radio" htmlFor="Alquiler">Alquilar</label>
 
-                <input type="radio" onChange={(e) => setTipoCompra(e.target.id)} name="filter" id="Compra" />
+                <input checked={tipoCompra == "Compra"} type="radio" onChange={(e) => setTipoCompra(e.target.id)} name="filter" id="Compra"/>
                 <label htmlFor="Compra">Compra</label>
 
-                <input type="radio" onChange={(e) => setTipoCompra(e.target.id)} name="filter" id="Compra/Alquiler" />
+                <input checked={tipoCompra == "Compra/Alquiler"} type="radio" onChange={(e) => setTipoCompra(e.target.id)} name="filter" id="Compra/Alquiler" />
                 <label htmlFor="Compra/Alquiler">Compra/Alquilar</label>
             </section>
             <section className="inputText-container">
                 <select onChange={(e) => setTipoPropiedad(e.target.value)} name="tipoPorpiedad" id="tipoPropiedad">
-                    <option value="Departamento">Departamento</option>
-                    <option value="Casa">Casa</option>
-                    <option value="Terreno/lote">Terreno</option>
-                    <option value="Galpon">Galpón</option>
+                    <option defaultValue={tipoPropiedad == "Departamento"}  value="Departamento">Departamento</option>
+                    <option defaultValue={tipoPropiedad == "Casa"}  value="Casa">Casa</option>
+                    <option defaultValue={tipoPropiedad == "Terreno/lote"}  value="Terreno/lote">Terreno</option>
+                    <option defaultValue={tipoPropiedad == "Galpon"}  value="Galpon">Galpón</option>
+                    <option defaultValue={tipoPropiedad == "Finca"}  value="Finca">Finca</option>
+                    <option defaultValue={tipoPropiedad == "All"}  value="All">Todas</option>
                 </select>
 
                 <input onChange={(e) => setZona(e.target.value)} type="search" name="search" placeholder="Zona.ej Norte, sur, centro" id="inputSearch" />
-                <button onClick={buscar}>Buscar</button>
+                
+                <Link className="button" to={"/propiedades"}  onClick={buscarPropiedades}> Buscar </Link>
             </section>
          
         </div>
@@ -105,15 +137,9 @@ function Info() {
     )
 }
 
-function PropContainer() {
-    return(
-    <>
-        <div>
-            <Prop></Prop>
-        </div>
-        <div>
-        <button className="masInfoButton">Mas propiedades</button>
-        </div>
-    </>
-    )
-}
+export function navigate (href) {
+    const NAVIGATON_EVENT = "pushstate"
+    window.history.pushState({}, "", href)
+    const navigationEvent = new Event(NAVIGATON_EVENT)
+    window.dispatchEvent(navigationEvent)
+  }
